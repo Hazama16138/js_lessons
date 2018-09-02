@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>othello</title>
+	<link rel="stylesheet" href="styles.css">
+	<script>
+		(function() {
+
+			var piece = [];
+
+			var showBoard = function() {
+				var b = document.getElementById("board");
+				while(b.firstChild) {
+					b.removeChild(b.firstChild);
+				}
+				for(var y = 1; y <= 8; y++) {
+					for(var x = 1; x <= 8; x++) {
+						var c = piece[board[x][y]].cloneNode(true);
+						c.style.left = ((x - 1) * 32) + "px";
+						c.style.top = ((y - 1) * 32) + "px";
+						b.appendChild(c);
+					}
+				}
+			}
+
+			var board = [];
+
+			onload = function() {
+
+				piece = [document.getElementById("cell")];
+
+				for(var i = 0; i < 10; i++) {
+					board[i] = [];
+					for(var j = 0; j < 10; j++) {
+						board[i][j] = 0;
+					}
+				}
+				showBoard();
+			};
+
+		})();
+	</script>
+</head>
+<body>
+	<div style="display:none;">
+		<div id="cell" style="position:absolute; width:33px; height:33px; background-color: #000;">
+			<div style="position:relative; top:1px; left:1px; width:31px; height:31px; background-color:#00ee00;">
+			</div>
+		</div>
+		<div id="white" style="position:relative; width:33px; height:33px; background-color: #000;">
+			<img style="display:block; position:relative; top:1px; left:1px; width:31px; height:31px;" src="../img/sample-white.png">
+		</div>
+		<div id="black" style="position:relative; width:33px; height:33px; background-color: #000;">
+			<img style="display:block; position:relative; top:1px; left:1px; width:31px; height:31px;" src="../img/sample-black.png">
+		</div>
+	</div>
+
+	<div id="board">test</div>
+</body>
+</html>
