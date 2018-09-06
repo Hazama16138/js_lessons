@@ -1,0 +1,27 @@
+.container {
+	display: none;
+}
+img {
+	display: block;
+}
+.cell {
+	width: 33px;
+	height: 33px;
+	position: absolute;
+	background-color: #000;
+}
+.square {
+	width: 31px;
+	height: 31px;
+	position: relative;
+	top: 1px;
+	left: 1px;
+}
+.square:nth-child(1) {
+	background-color: #0e0;
+}
+.board {
+	position: relative;
+	top: 20px;
+	left: 20px;
+}
