@@ -1,6 +1,54 @@
 	(function() {
 		// document.write('hello world');
 
+		var turn = 2;
+		var checkAndturn = function(x, y) {
+			var ret = 0;
+
+			for(var vx = -1; vx <= 1; vx++) {
+				for(var vy = -1; vy <= 1; vy++) {
+					if(vx == 0 && vy == 0) {
+						continue;
+					}
+
+					var nx = x + vx;
+					var ny = y + vy;
+					var n = 0;
+
+					while(board[nx][ny] == 3 - turn) {
+						n++;
+						nx += vx;
+						ny += vy;
+						// board[nx][ny] = turn;
+					}
+
+					if (n > 0 && board[nx][ny] == turn) {
+						ret += n;
+
+						nx = x + vx;
+						ny = y + vy;
+
+						while(board[nx][ny] == 3 - turn) {
+								board[nx][ny] = turn;
+								nx += vx;
+								ny += vy;
+						}
+					}
+
+
+					// if(n > 0 && board[nx][ny] == 3 - turn) {
+					// 	n++;
+					// 	nx += vx;
+					// 	ny += vy;
+					// }
+
+
+				}
+			}
+
+			return ret;
+		}
+
 		var showBoard = function() {
 
 			var b = document.getElementById('board');
@@ -18,8 +66,12 @@
 						(function() {
 							var _x = x, _y = y;
 							piece.addEventListener('click', function() {
-								board[_x][_y] = 2;
-								showBoard();
+								if(checkAndturn(_x, _y) > 0) {
+									board[_x][_y] = turn;
+									// checkAndturn(_x, _y);
+									showBoard();
+									turn = 3 - turn;
+								};
 							});
 						})();
 					}
