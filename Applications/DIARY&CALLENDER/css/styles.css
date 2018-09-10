@@ -1,0 +1,47 @@
+p, body, h1 {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	margin: 0 auto;
+	text-align: center;
+	width: 700px;
+}
+
+table {
+	font-size: 20px;
+	margin: 0 auto;
+	padding-top: 30px;
+	text-align: center;
+	width: 600px;
+}
+
+th {
+	background-color: #eee;
+}
+
+th, td {
+	border: 1px solid #ccc;
+	height: 50px;
+	width: 60px;
+}
+
+tr:nth-child(2) th:first-child,
+td:first-child {
+	color: #ff0000;
+}
+
+tr:nth-child(2) th:last-child,
+td:last-child {
+	color: #0000ff;
+}
+
+.prev, .next {
+	cursor: pointer;
+}
+
+.prev:hover,
+.next:hover {
+	opacity: .6;
+}
