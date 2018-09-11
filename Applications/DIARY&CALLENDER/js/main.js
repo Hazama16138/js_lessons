@@ -52,13 +52,45 @@
 
 		prev.addEventListener('click', function() {
 
-			title.innerHTML = "hello prev world!";
+			var prev_date = new Date(year, month - 1),
+					prev_year = prev_date.getFullYear(),
+					prev_month = prev_date.getMonth();
+
+			year = prev_year;
+			// console.log(year);
+			month = prev_month;
+			if(month == 0) {
+				month = 12;
+				year = prev_year - 1;
+			}
+			// console.log(month);
+
+			table_title = year + "年" + month + "月";
+
+
+			title.innerHTML = table_title;
 
 		});
 
 		next.addEventListener('click', function() {
 
-			title.innerHTML = "hello next world!";
+			var next_date = new Date(year, month + 1),
+				 	next_year= next_date.getFullYear(),
+					next_month = next_date.getMonth();
+
+			year = next_year;
+			// console.log(year);
+			month = next_month;
+			if(month == 0) {
+				month = 12;
+				year = next_year - 1;
+			}
+			// console.log(month);
+
+			table_title = year + "年" + month + "月";
+
+
+			title.innerHTML = table_title;
 
 		});
 	};
