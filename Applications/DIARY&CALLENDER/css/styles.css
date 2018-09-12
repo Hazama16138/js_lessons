@@ -24,7 +24,7 @@ h1 {
 .container {
 	margin: 0 auto;
 	text-align: center;
-	width: 700px;
+	width: 800px;
 }
 
 table {
@@ -32,7 +32,7 @@ table {
 	margin: 0 auto;
 	padding-top: 30px;
 	text-align: center;
-	width: 600px;
+	width: 800px;
 }
 
 th {
@@ -41,8 +41,8 @@ th {
 
 th, td {
 	border: 1px solid #ccc;
-	height: 50px;
-	width: 60px;
+	height: 64px;
+	width: auto;
 }
 
 tr:nth-child(2) th:first-child,
@@ -63,4 +63,37 @@ td:last-child {
 .prev:hover,
 .next:hover {
 	opacity: .6;
+}
+
+.diary-box {
+	width: 800px;
+	margin: 30px auto 40px auto;
+	background-color: #bbb;
+	padding-top: 30px;
+	height: 320px;
+}
+
+.diary_date {
+	background-color: #888;
+	width: 400px;
+	height: 30px;
+	margin: 0 auto 40px auto;
+}
+
+.diary_title {
+	width: 600px;
+	height: 30px;
+	margin: 0 0 10px 100px ;
+	float: left;
+}
+
+.diary_body {
+	width: 700px;
+	margin-left: 50px;
+}
+
+.button {
+	margin: 20px 0 0 655px;
+	padding: 2px;
+	width: 100px;
 }

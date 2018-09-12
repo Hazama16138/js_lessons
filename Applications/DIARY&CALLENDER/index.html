@@ -7,10 +7,8 @@
 </head>
 <body>
 	<div class="container">
-		<header>
-			<h1>DIARY&CALLENDER</h1>
-			<p>日々の成長を日記に綴ってください。</p>
-		</header>
+		<h1>DIARY&CALLENDER</h1>
+		<p>日々の成長を日記に綴ってください。</p>
 		<table>
 			<thead>
 				<tr>
@@ -31,6 +29,12 @@
 			<tbody id="callender">
 			</tbody>
 		</table>
+	</div>
+	<div class="diary-box">
+		<div id="diary_date" class="diary_date"></div>
+		<input type="text" id="diary_title" class="diary_title">
+		<textarea id="diary_body" class="diary_body" rows="10" cols="18"></textarea>
+		<input type="button" id="button" class="button" value="保存">
 	</div>
 	<script src="js/main.js"></script>
 </body>
